@@ -113,8 +113,54 @@ const EmailLink = styled.a`
   }
 `;
 
+const DownloadSection = styled.div`
+  margin-top: ${({ theme }) => theme.spacing.xl};
+  padding-top: ${({ theme }) => theme.spacing.xl};
+  border-top: 1px solid ${({ theme }) => theme.colors.border.light};
+`;
+
+const DownloadButtons = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing.md};
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const DownloadButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.lg};
+  font-size: ${({ theme }) => theme.typography.fontSize.md};
+  font-weight: ${({ theme }) => theme.typography.fontWeight.medium};
+  color: ${({ theme }) => theme.colors.text.primary};
+  background-color: ${({ theme }) => theme.colors.background.paper};
+  border: 1px solid ${({ theme }) => theme.colors.border.main};
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.key};
+    color: ${({ theme }) => theme.colors.common.white};
+    border-color: ${({ theme }) => theme.colors.key};
+  }
+  
+  &:active {
+    transform: translateY(1px);
+  }
+`;
+
 export const BasicInfo = () => {
   const profileImageUrl = ''; // 여기에 프로필 이미지 URL을 넣으세요
+  
+  // 파일 경로 (public/file 폴더에 파일을 추가한 후 경로를 수정하세요)
+  const resumePath = '/file/손경남_경력기술서.pdf'; // 경력 기술서 파일 경로
+  const portfolioPath = '/file/손경남_포트폴리오.pdf'; // 포트폴리오 파일 경로
 
   return (
     <Section>
@@ -150,6 +196,24 @@ export const BasicInfo = () => {
           </InfoItem>
         </InfoContainer>
       </ContentWrapper>
+      <DownloadSection>
+        <DownloadButtons>
+          <DownloadButton
+            href={resumePath}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            경력 기술서 보기
+          </DownloadButton>
+          <DownloadButton
+            href={portfolioPath}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            포트폴리오 보기
+          </DownloadButton>
+        </DownloadButtons>
+      </DownloadSection>
     </Section>
   );
 };
