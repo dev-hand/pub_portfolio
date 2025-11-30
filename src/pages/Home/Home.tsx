@@ -1,12 +1,18 @@
-import { HomeHeader } from './components/HomeHeader';
-import { HomeContent } from './components/HomeContent';
+import { BasicInfo } from './components/BasicInfo';
+import { About } from './components/About';
+import { TechStack } from './components/TechStack';
+import { WorkExperience } from './components/WorkExperience';
+import { Projects } from './components/Projects';
 import { HomeContainer } from './Home.styles';
 
 const Home = () => {
   return (
     <HomeContainer>
-      <HomeHeader />
-      <HomeContent />
+      <BasicInfo />
+      <About />
+      <TechStack />
+      <WorkExperience />
+      <Projects />
     </HomeContainer>
   );
 };

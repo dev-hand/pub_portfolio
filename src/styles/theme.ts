@@ -1,8 +1,7 @@
-export type ThemeType = 'light' | 'dark';
-
 export interface Theme {
-    type: ThemeType;
     colors: {
+        // Key Color
+        key: string;
         // Primary Colors
         primary: {
             main: string;
@@ -83,9 +82,9 @@ export interface Theme {
     };
 }
 
-export const lightTheme: Theme = {
-    type: 'light',
+export const theme: Theme = {
     colors: {
+        key: '#2563EB',
         primary: {
             main: '#6c63ff',
             light: '#a89bff',
@@ -134,76 +133,24 @@ export const lightTheme: Theme = {
         xl: '32px',
     },
     typography: {
-        fontFamily: "'Inter', 'Spoqa Han Sans Neo', sans-serif",
+        fontFamily: "Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif",
         fontSize: {
-        xs: '12px',
-        sm: '14px',
-        md: '16px',
-        lg: '18px',
-        xl: '20px',
+            xs: '12px',
+            sm: '14px',
+            md: '16px',
+            lg: '18px',
+            xl: '20px',
         },
         fontWeight: {
-        light: 300,
-        regular: 400,
-        medium: 500,
-        bold: 700,
+            light: 300,
+            regular: 400,
+            medium: 500,
+            bold: 700,
         },
     },
     shadows: {
         sm: '0 2px 4px rgba(0, 0, 0, 0.1)',
         md: '0 4px 8px rgba(0, 0, 0, 0.1)',
         lg: '0 8px 16px rgba(0, 0, 0, 0.1)',
-    },
-};
-
-export const darkTheme: Theme = {
-    type: 'dark',
-    colors: {
-        primary: {
-            main: '#a89bff',
-            light: '#c2baff',
-            dark: '#6c63ff',
-            contrast: '#ffffff',
-        },
-        secondary: {
-            main: '#fff176',
-            light: '#fff59d',
-            dark: '#fdd835',
-            contrast: '#000000',
-        },
-        background: {
-            default: '#121212',
-            paper: '#1a1a1a',
-            elevated: '#262626',
-        },
-        text: {
-            primary: '#ffffff',
-            secondary: '#c2c2c2',
-            disabled: '#666666',
-            hint: '#aaaaaa',
-        },
-        border: {
-            light: '#444444',
-            main: '#404040',
-            dark: '#555555',
-        },
-        status: {
-            success: '#66bb6a',
-            warning: '#ffa726',
-            error: '#ef5350',
-            info: '#42a5f5',
-        },
-        common: {
-            black: '#000000',
-            white: '#ffffff',
-            transparent: 'transparent',
-        },
-    },
-    spacing: lightTheme.spacing,
-    typography: lightTheme.typography,
-    shadows: {
-        sm: '0 2px 4px rgba(0, 0, 0, 0.2)',
-        md: '0 4px 8px rgba(0, 0, 0, 0.2)',
-        lg: '0 8px 16px rgba(0, 0, 0, 0.2)',
     },
 };

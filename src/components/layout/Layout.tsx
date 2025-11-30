@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Header } from './Header';
 import { Footer } from './Footer';
 
 const LayoutContainer = styled.div`
@@ -11,9 +10,8 @@ const LayoutContainer = styled.div`
 const Main = styled.main`
   flex: 1;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 0;
 `;
 
 interface LayoutProps {
@@ -23,7 +21,6 @@ interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <LayoutContainer>
-      <Header />
       <Main>{children}</Main>
       <Footer />
     </LayoutContainer>
